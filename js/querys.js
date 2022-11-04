@@ -13,6 +13,7 @@ const regions = document.querySelectorAll('div.container');
 // Show match history
 const matchInformation = document.querySelector('article.match');
 
+const best = document.querySelector('article.best');
 const showMatch = document.querySelector('div.arrow');
 const matchHistory = document.querySelector('article.match-history');
 

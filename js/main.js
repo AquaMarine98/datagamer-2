@@ -46,12 +46,13 @@ showMatch.addEventListener('click', () => {
     showMatch.classList.toggle(active);
     matchHistory.classList.toggle(active);
 
-    if(matchHistory.classList.contains(active)) {
+    /* if(matchHistory.classList.contains(active)) {
         matchHistory.scrollIntoView({
             behavior: "smooth",
             block: 'end'
         })
-    }
+    } */
+    best.classList.toggle(active);
 })
 function createTeamContainer(team) {
     team.innerHTML = '';

@@ -11,6 +11,10 @@
     --font-nunito: 'Nunito', sans-serif;
 }
 
+p {
+    font-family: var(--font-nunito);
+}
+
 @font-face {
     font-family: gilroyFontExtraBold;
     src: url(../fonts/Gilroy-ExtraBold.otf);
@@ -58,7 +62,7 @@ section.top h1.title {
     font-size: 6vh;
     margin: 0;
 }
-section.top h2 {
+section.top p {
     max-width: 70vh;
     font-size: 2vh;
 }
@@ -266,7 +270,7 @@ article.prediction > .account-info {
 }
 
 article.prediction img.account-img {
-    --area: 15vh;
+    --area: clamp(15vh,calc(1rem + 1vw),20vw);
     grid-area: 1 / 1 / 5 / 2;
     width: var(--area);
     height: var(--area);
@@ -333,7 +337,7 @@ article.prediction p.division-winrate {
 section.match-prediction .champ {
     display: grid;
     justify-items: center;
-
+    align-items: center;
     grid-template-columns: repeat(2, var(--heigth));
     grid-template-rows: 80px var(--heigth);
 
@@ -341,8 +345,8 @@ section.match-prediction .champ {
 }
 
 .match-prediction img.champ-img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
 
     grid-column: 1 / 3;
     grid-row: 1 / 2;
@@ -508,9 +512,13 @@ div.champs img {
 
 /* Best champs and roles */
 .best {
+    display: none;
     width: 100%;
     gap: 40px;
     justify-content: space-between;
+}
+.best.active {
+    display: flex;
 }
 .best-champ > div p, .best-role > div p {
     font-size: 16px;
@@ -556,7 +564,7 @@ article.match-history:not(.active) {
 }
 article.match-history {
     width: 100%;
-    margin-top: 6vh;
+    margin-top: 0;
     justify-content: space-between;
 }
 .team {
@@ -693,7 +701,7 @@ article.newsletter > div > div {
     gap: 0 .8vw;
 }
 article.newsletter > div > div input {
-    width: clamp(225px, calc(100% + 1px), 315px);
+    width: clamp(0px, calc(50% + 1px), 250px);
     height: 5vh;
     font-size: 2vh;
     padding: 0 .7vw;
@@ -778,7 +786,7 @@ article.newsletter > div > div button {
     .match {
         display: grid;
         grid-template-columns: repeat(3, auto);
-        justify-items: start;
+        justify-items: center;
         justify-content: space-evenly;
         align-items: end;
     }
@@ -990,10 +998,39 @@ article.newsletter > div > div button {
     article.best section.best-champ > div, article.best section.best-role > div {
         gap: 8px;
     }
+
+    article.newsletter {
+        border-radius: 0;
+    }
+
+    .social > img {
+        width: 50px;
+        height: 30px;
+
+        object-fit: contain;
+    }
+
+    section.top h1.title {
+        font-size: 10vw;
+    }
+    section.top p {
+        font-size: 4vw;
+
+    }
 }
 
 @media screen and (max-width: 375px) {
     .arrow {
         grid-area: 3/4/4/5;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .best-champ > p, .best-role > p {
+        font-size: 16px;
+    }
+
+    .best-champ > div p, .best-role > div p {
+        font-size: 12px;
     }
 }
