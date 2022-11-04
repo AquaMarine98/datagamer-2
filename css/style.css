@@ -1,0 +1,999 @@
+/* Root */
+:root {
+    user-select:none;
+    -moz-user-select: none;
+
+    --margin-body: 0px 8% 10%;
+
+    --heigth: 40px;
+    --border-radius-6px: 6px;
+
+    --font-nunito: 'Nunito', sans-serif;
+}
+
+@font-face {
+    font-family: gilroyFontExtraBold;
+    src: url(../fonts/Gilroy-ExtraBold.otf);
+}
+
+/* Body */
+body:not(article.prediction) {
+    margin: 0px;
+    font-family: gilroyFontExtraBold;
+}
+
+/* absolute objects */
+.absolute {
+    position: absolute;
+}
+
+/* Class for every item with display: flex ROW */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Position relative & z-index 2 */
+.z-index-2 {
+    position: relative;
+    z-index: 2;
+}
+
+/* Top section */
+section.top {
+    margin: var(--margin-body);
+
+    position: relative;
+}
+section.top > div {
+    margin-top: 10vh;
+}
+
+section.top h1.title {
+    width: clamp(10px,100%,60vh);
+    font-size: 6vh;
+    margin: 0;
+}
+section.top h2 {
+    max-width: 70vh;
+    font-size: 2vh;
+}
+
+section.top > div > div {
+    width: clamp(1px,100%,70vh);
+
+    gap: 2vh;
+}
+
+section.top input.summoner-input {
+    border: none;
+    border-radius: .8vh;
+    width: 100%;
+    font-size: 2vh;
+    outline: none;
+    padding: 0 1vw;
+}
+
+section.top div.search-bar {
+    position: relative;
+    width: clamp(256px, calc(15vw + 15rem), 400px);
+    height: 5vh;
+    margin-top: 2vh;
+    padding: 0.5vh 1vh;
+    gap: 1vh;
+    border: .2vh solid grey;
+    border-radius: 1vh;
+    box-sizing: content-box;
+}
+section.top div.search-bar > button.regions,  
+section.top div.search-bar h1.regions{
+    font-size: 2vh;
+
+    width: 5vh;
+    height: 5vh;
+
+    padding: 0px;
+    margin: 0px;
+
+    color: white;
+    background: black;
+
+    border: none;
+    border-radius: 1vh;
+}
+h1.regions {
+    justify-content: center;
+    align-items: center;
+}
+
+section.top div.all-regions:not(.active) {
+    display: none;
+}
+section.top div.all-regions {
+    width: 100%;
+
+    flex-wrap: wrap;
+
+    left: 0px;
+    top: 100%;
+
+    margin-top: 0.5vh;
+}
+section.top div.all-regions > div.container {
+    gap: 0px 4vh;
+
+    width: 100%;
+
+    padding-left: 1.5vh;
+
+    border-radius: 1vh;
+}
+section.top div.all-regions > div.container:hover {
+    background-color: rgba(240, 240, 240, .7);
+}
+section.top div.all-regions > div.container > div:first-child {
+    justify-content: center;
+    align-items: center;
+
+    width: 5vh;
+    height: 5vh;
+
+    margin: 1.4vh 0px 0px 0px;
+
+    color: white;
+    background: black;
+
+    border: none;
+    border-radius: 1vh;
+}
+section.top div.search-bar > button.regions h4 {
+    justify-content: flex-start;
+    align-items: center;
+
+    width: fit-content;
+
+    color: black;
+}
+
+section.top button.search-button {
+    width: 15vh;
+
+    font-size: 2vh;
+
+    margin-top: 2vh;
+    padding: .5vh 0px;
+
+    background: black;
+
+    color: white;
+
+    border: none;
+    border-radius: 1vh;
+}
+
+section.top img.bg-image {
+    width: 55vh;
+    top: -10vh;
+    right: -9.5%;
+    opacity: .9;
+    z-index: 0;
+}
+/* ------------------- */
+
+/* Mid */
+
+section.mid {
+    /* height: 38vh; */
+
+    margin: var(--margin-body);
+}
+
+section.mid > h1 {
+    font-size: 4.5vh;
+
+    margin: 0 0 20px;
+}
+
+section.mid .information-container:not(.active) {
+    display: none;
+}
+section.mid .information-container {
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+section.mid .information-container > .obj {
+    flex: 1 0;
+
+    margin-top: 2.5vh;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 0;
+}
+
+section.mid .information-container > .obj > img {
+    width: 4vh;
+    height: 4vh;
+
+    padding: 4vh;
+
+    background: rgb(221, 221, 221);
+
+    border-radius: 50%;
+    object-fit: scale-down;
+}
+section.mid .information-container > .obj p {
+    margin: .8vh;
+
+    text-align: center;
+}
+section.mid .information-container > .obj p:nth-child(2) {
+    font-weight: bold;
+    font-size: 3vh;
+}
+section.mid .information-container > .obj p:nth-child(3) {
+    width: 15vw;
+
+    font-size: 2.1vh;
+
+    text-align: center;
+}
+
+/* Prediction --- */
+article.prediction:not(.active) {
+    display: none;
+}
+
+article.prediction {
+    width: 100%;
+    gap: 2vw;
+    margin: 5vh auto;
+    justify-content: space-between;
+    font-family: nunito;
+}
+
+article.prediction > .account-info {
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+}
+
+article.prediction img.account-img {
+    --area: 15vh;
+    grid-area: 1 / 1 / 5 / 2;
+    width: var(--area);
+    height: var(--area);
+
+    padding: 5px;
+
+    border-radius: 50%;
+
+    background: rgb(221, 221, 221);
+}
+
+section.account-info > div {
+    height: 2px;
+    width: 25%;
+    background: rgb(221, 221, 221);
+}
+article.prediction h1.name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 4px 0px;
+}
+
+article.prediction .account-name div {
+    width: 45%;
+    height: .1px;
+
+    background: rgb(221, 221, 221);
+}
+
+article.prediction p.queue {
+    font-size: 16px;
+
+    color: rgb(175, 175, 175);
+
+    margin: 8px 0px;
+}
+
+article.prediction p.division-winrate {
+    font-size: 16px;
+
+    margin: 0px;
+
+    text-align: center;
+}
+
+/* Match champ and spells */
+.match {    
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1.8vw;
+}
+.match-prediction {
+    width: clamp(830px,calc(100% + 1rem),1200px);
+    height: 100%;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    gap: 8px 0px;
+}
+
+section.match-prediction .champ {
+    display: grid;
+    justify-items: center;
+
+    grid-template-columns: repeat(2, var(--heigth));
+    grid-template-rows: 80px var(--heigth);
+
+    gap: .2rem;
+}
+
+.match-prediction img.champ-img {
+    width: 100%;
+    height: 100%;
+
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+
+    border-radius: 50%;
+
+    background: blanchedalmond;
+}
+.match-prediction img.spell-img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 25%;
+
+    background: antiquewhite;
+}
+
+.match-prediction > div {
+    width: 97%;
+    height: 1px;
+
+    background: rgb(221, 221, 221);
+
+    margin: 12px 0px;
+}
+
+/* result and elo */
+
+div.info h1:first-child {
+    font-size: 20px;
+
+    margin: 12px 0px;
+}
+div.info h1:nth-child(2) {
+    width: fit-content;
+    background: black;
+    color: white;
+
+    font-size: 16px;
+    
+    padding: 4px 12px;
+    margin: 12px 0px;
+
+    border-radius: var(--border-radius-6px);
+}
+
+/* KDA */
+div.kda {
+    align-items: center;
+}
+div.kda h1 {
+    font-size: 16px;
+
+    margin: 0px;
+}
+div.kda p {
+    font-size: 12px;
+
+    margin: 0px;
+    margin-top: 20px;
+}
+
+/* Items */
+div.items h1, div.champs h1 {
+    /* Esto funciona para h1 de items y enfrentameinto */
+
+    font-size: 16px;
+
+    margin: 0px 0px 12px;
+}
+
+div.items div {
+    display: grid;
+
+    grid-template-columns: repeat(4, var(--heigth));
+    grid-template-rows: var(--heigth) var(--heigth);
+
+    gap: 2px;
+}
+
+div.items img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 25%;
+
+    background: bisque;
+}
+
+/* Matchups champs */
+/* El h1 de enfrentamientos esta en el tag de items ya que es lo mismo */
+div.champs > div{
+    display: grid;
+    grid-template-columns: repeat(5, var(--heigth));
+    grid-template-rows: repeat(2, var(--heigth));
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+.champ-img-container {
+    --outline-pixels: 3px;
+    width: calc(100% - (var(--outline-pixels) * 2));
+    height: calc(100% - (var(--outline-pixels) * 2));
+    border-radius: 10px;
+    overflow: hidden;
+    outline: var(--outline-pixels) solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    object-fit: contain;
+}
+.champ-main-container {
+    outline-color: rgb(255, 164, 27);
+    border-radius: 50%;
+}
+div.champs img {
+    width: 120%;
+    height: 120%;
+    border-radius: 25%;
+}
+
+/* Arrow */
+.arrow {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    width: 35px;
+    height: 35px;
+
+    top: -5px;
+
+    border-radius: 50%;
+    background: black;
+
+    transform: rotateZ(0deg);
+
+    transition: transform .4s;
+}
+.fa-angle-down {
+    color: white;
+
+    font-size: 25px;
+
+    width: 25px;
+    height: 25px;
+
+    text-align: center;
+}
+.fa-angle-down::before {
+    width: 25px;
+    height: 25px;
+}
+.arrow.active {
+    transform: rotateZ(180deg);
+}
+
+
+/* Best champs and roles */
+.best {
+    width: 100%;
+    gap: 40px;
+    justify-content: space-between;
+}
+.best-champ > div p, .best-role > div p {
+    font-size: 16px;
+    width: fit-content;
+    margin: auto 0px;
+    padding: 4px 12px;
+
+    border-radius: var(--border-radius-6px);
+
+    background: black;
+    color: white;
+
+    font-weight: bold;
+}
+
+.best-champ > p, .best-role > p {
+    font-size: 20px;
+
+    margin: 0px;
+    margin-bottom: 20px;
+
+    font-weight: bold;
+}
+
+.best-div {
+    display: none;
+}
+
+article.best section.best-champ > div, article.best section.best-role > div {
+    gap: 0px 20px;
+}
+
+article.best section.best-champ img, article.best section.best-role img {
+    width: calc(var(--heigth) + 10px);
+    height: calc(var(--heigth) + 10px);
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* Match history */
+article.match-history:not(.active) {
+    display: none;
+}
+article.match-history {
+    width: 100%;
+    margin-top: 6vh;
+    justify-content: space-between;
+}
+.team {
+    flex: 1 0;
+
+    margin-top: 1rem;
+    margin-bottom: 20px;
+}
+.t2 {
+    background: rgb(221, 221, 221);
+
+    border-radius: 0px 0px 8px 0px;
+}
+.team span {
+    background: rgb(207, 207, 207);
+
+    width: 98%;
+    height: .1px;
+
+    margin: 4px auto;
+}
+
+.player {
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 4px 12px 8px 8px;
+}
+
+.player > img {
+    width: 65px;
+    height: 65px;
+
+    background: gray;
+
+    border-radius: 50%;
+}
+.player p {
+    margin: 4px 0px;
+}
+
+.player .name p:first-child {
+    color: rgb(170, 170, 170);
+
+    font-weight: bold;
+}
+.player .name p:last-child {
+    color: white;
+    background: black;
+
+    font-weight: bold;
+
+    padding: 2px 12px;
+
+    border-radius: var(--border-radius-6px);
+}
+
+.player .score p:first-child {
+    color: rgb(170, 170, 170);
+
+    font-weight: bold;
+}
+.player .score p:last-child {
+    color: rgb(170, 170, 170);
+}
+
+.player .items {
+    display: grid;
+
+    gap: 2px;
+
+    grid-template-columns: repeat(4, 30px);
+    grid-template-rows: repeat(2, 30px);
+
+}
+
+/* Bottom */
+section.bottom {
+    margin: 0px 8% 32px;
+}
+
+article.newsletter > div:not(.active) {
+    display: none;
+}
+
+article.newsletter {
+    width: calc(65vw + 17rem);
+    height: 25vh;
+    margin-inline: auto;
+    justify-content: center;
+    border-radius: 1vh;
+    background: rgb(210, 210, 210);
+    overflow: hidden;
+}
+
+article.newsletter > img {
+    position: relative;
+    height: 100%;
+    object-fit: cover;
+    object-position: 15% 0%;
+}
+article.newsletter > div {
+    width: 50%;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2vh;
+    margin: 5vw;
+}
+article.newsletter > div h1 {
+    font-size: 3vh;
+    font-weight: bold;
+    margin: 0;
+}
+article.newsletter > div p {
+    font-size: 2vh;
+    margin: 0;
+}
+
+article.newsletter > div:nth-child(3) img {
+    width: 7.5vh;
+    height: 7.5vh;
+}
+article.newsletter > div:nth-child(3) h1 {
+    width: 70%;
+
+    text-align: center;
+}
+article.newsletter > div:nth-child(3) {
+    align-items: center;
+}
+
+article.newsletter > div > div {
+    width: 100%;
+    gap: 0 .8vw;
+}
+article.newsletter > div > div input {
+    width: clamp(225px, calc(100% + 1px), 315px);
+    height: 5vh;
+    font-size: 2vh;
+    padding: 0 .7vw;
+    border: .3vh solid rgb(190, 190, 190);
+    border-radius: 1vh;
+    box-sizing: border-box;
+}
+article.newsletter > div > div button {
+    margin: 0;
+    font-size: 2vh;
+    border: none;
+    border-radius: 1vh;
+    color: white;
+    background: black;
+}
+
+
+/* Social */
+.social {
+    margin: 3.5vh 0;
+    justify-content: center;
+    align-items: center;
+    gap: 0 .5vw;
+}
+.social > img {
+    width: 3vw;
+    height: 3vw;
+    object-fit: scale-down;
+    cursor: pointer;
+}
+
+/* Copyright */
+.copyright {
+    justify-content: center;
+    align-items: center;
+}
+.copyright > p {
+    width: 40vw;
+    font-size: 1.3vh;
+    text-align: center;
+    margin: 0;
+}
+/* ------------------- */
+@media screen and (max-width: 1201px) {
+    section.top {
+        margin-inline: 0;
+    }
+    section.mid {
+        margin: 0 0 10%;
+    }
+    section.top img.bg-image {
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    section.top img.bg-image {
+        opacity: .3;
+    }
+
+    article.prediction {
+        flex-direction: column;
+        align-items: center;
+    }
+    article.prediction > .account-info {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(4, auto);
+        justify-items: start;
+        align-items: end;
+        align-content: center;
+        gap: 0 20px;
+    }
+
+    /* article.best section.best-champ > div, article.best section.best-role > div {
+        display: grid;
+        grid-template-columns: 40px auto;
+        justify-content: center;
+        gap: 12px;
+    } */
+
+    .match {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-items: start;
+        justify-content: space-evenly;
+        align-items: end;
+    }
+    div.kda {
+        align-items: flex-start;
+    }
+    .match-prediction {
+        width: 100%;
+    }
+    .best {
+        justify-content: space-around;
+    }
+
+    section.bottom {
+        margin: 0 0 32px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    :root {
+        --margin-body: 0;
+    }
+
+    section.top > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    section.top > div > div {
+        justify-content: center;
+    }
+
+    section.top img.bg-image {
+        right: 0;
+        top: -10vh;
+        mask-image: linear-gradient(180deg, black 75%, transparent 100%);
+        -webkit-mask-image: linear-gradient(180deg, black 75%, transparent 100%);
+    }
+
+    section.mid {
+        margin: 5vh 0 8vh;
+    }
+    /* article.prediction {
+        flex-direction: column;
+    } */
+    /* article.prediction > .account-info {
+        justify-content: center;
+        align-items: flex-start;
+        align-content: center;
+        height: 123px;
+        flex-wrap: wrap;
+        gap: 0 40px;
+    } */
+
+    section.mid .information-container > .obj > img {
+        width: 5vh;
+        height: 5vh;
+        padding: 3.5vh;
+    }
+
+
+
+    article.newsletter {
+        position: relative;
+        width: 100%;
+    }
+    article.newsletter > img {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        opacity: .2;
+    }
+    article.newsletter > div {
+        position: inherit;
+        align-items: center;
+        width: 100%;
+    }
+    article.newsletter > div > div {
+        justify-content: center;
+    }
+    article.newsletter > div p {
+        text-align: center;
+    }
+
+    .social {
+        gap: 0 1.5vw;
+    }
+    .social > img {
+        width: 4vw;
+        height: 4vw;    
+    }
+
+    section.bottom {
+        margin: 0 0 32px;
+    }
+    .copyright > p {
+        width: 75vw;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    article.match-history {
+        flex-direction: column;
+    }
+    .player {
+        justify-content: space-between;
+    }
+
+    .t2 {
+        border-bottom-left-radius: 8px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    article.best section.best-champ > div, article.best section.best-role > div {
+        gap: 8px 20px;
+        display: grid;
+        justify-content: flex-start;
+        grid-template-columns: auto auto;
+    }
+
+    .best-div {
+        display: block;
+        width: 1px;
+        background: #d6d4d4;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    section.top img.bg-image {
+        width: 130%;
+        height: 130%;
+    }
+
+    section.top > div > div {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    section.top input.summoner-input {
+        padding-inline: 12px 0;
+    }
+    section.top button.search-button{
+        height: 5vh;
+    }
+
+
+    section.mid > h1 {
+        text-align: center;
+    }
+    section.mid .information-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    section.mid .information-container > .obj p:nth-child(3) {
+        width: 100%;
+    }
+
+    article.prediction p.division-winrate {
+        text-align: start;
+    }
+    .match {
+        grid-template-columns: repeat(4, 77px);
+        grid-template-rows: repeat(3, auto);
+        gap: 1vw;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    section.match-prediction .champ {
+        grid-area: 1/1/2/3;
+    }
+    section.match-prediction .info {
+        grid-area: 1/3/2/5;
+    }
+    div.kda{
+        grid-area: 2/1/3/3;
+    }
+    section.match-prediction .items {
+        grid-area: 2/3/3/5;
+        position: inherit;
+        right: 10px;
+    }
+    section.match-prediction .champs {
+        grid-area: 3/1/4/4;
+    }
+    .arrow {
+        grid-area: 3/3/4/5;
+    }
+
+    .best {
+        gap: 0;
+        text-align: start;
+    }
+    .best-champ, .best-role {
+        width: 45%;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .best-champ > p, .best-role > p {
+        width: 80%;
+    }
+    .best-role {
+        align-items: flex-end;
+    }
+    article.best section.best-champ > div, article.best section.best-role > div {
+        gap: 8px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .arrow {
+        grid-area: 3/4/4/5;
+    }
+}
