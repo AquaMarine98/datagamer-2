@@ -910,7 +910,7 @@ article.newsletter > div > div button {
     }
 }
 
-@media screen and (max-width: 425px) {
+@media(max-width: 425px) {
     :root {
         --heigth: 30px;
     }
@@ -1034,12 +1034,4 @@ article.newsletter > div > div button {
         font-size: 4vw;
 
     }
-}
-
-@media screen and (max-width: 375px) {
-}
-
-@media screen and (max-width: 320px) {
-
-    
 }
