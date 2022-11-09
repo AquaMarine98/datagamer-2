@@ -346,8 +346,6 @@ section.match-prediction .champ {
 
 .match-prediction img.champ-img {
     width: 90%;
-    height: 90%;
-
     grid-column: 1 / 3;
     grid-row: 1 / 2;
 
@@ -448,7 +446,7 @@ div.champs > div{
     justify-items: center;
 }
 .champ-img-container {
-    --outline-pixels: 3px;
+    --outline-pixels: 2px;
     width: calc(100% - (var(--outline-pixels) * 2));
     height: calc(100% - (var(--outline-pixels) * 2));
     border-radius: 10px;
@@ -500,10 +498,6 @@ div.champs img {
     height: 25px;
 
     text-align: center;
-}
-.fa-angle-down::before {
-    width: 25px;
-    height: 25px;
 }
 .arrow.active {
     transform: rotateZ(180deg);
@@ -771,7 +765,7 @@ article.newsletter > div > div button {
         grid-template-columns: auto auto;
         grid-template-rows: repeat(4, auto);
         justify-items: start;
-        align-items: end;
+        align-items: flex-start;
         align-content: center;
         gap: 0 20px;
     }
@@ -917,6 +911,10 @@ article.newsletter > div > div button {
 }
 
 @media screen and (max-width: 425px) {
+    :root {
+        --heigth: 30px;
+    }
+
     section.top img.bg-image {
         width: 130%;
         height: 130%;
@@ -952,11 +950,14 @@ article.newsletter > div > div button {
         text-align: start;
     }
     .match {
-        grid-template-columns: repeat(4, 77px);
+        width: auto;
+        grid-template-columns: repeat(4, 80px);
         grid-template-rows: repeat(3, auto);
-        gap: 1vw;
+        gap: 16px 0;
         justify-content: space-around;
         align-items: center;
+        text-align: center;
+        margin-top: 24px;
     }
 
     section.match-prediction .champ {
@@ -965,19 +966,31 @@ article.newsletter > div > div button {
     section.match-prediction .info {
         grid-area: 1/3/2/5;
     }
+    div.info h1:nth-child(2) {
+        font-size: 14px;
+    }
     div.kda{
+        align-items: center;
         grid-area: 2/1/3/3;
     }
     section.match-prediction .items {
         grid-area: 2/3/3/5;
-        position: inherit;
-        right: 10px;
     }
     section.match-prediction .champs {
-        grid-area: 3/1/4/4;
+        grid-area: 3/1/4/3;
     }
     .arrow {
         grid-area: 3/3/4/5;
+        width: var(--heigth);
+        height: var(--heigth);
+        position: inherit;
+        top: 12px;
+    }
+    .fa-angle-down {
+        --pixels: 20px;
+        font-size: var(--pixels);
+        width: var(--pixels);
+        height: var(--pixels);
     }
 
     .best {
@@ -990,19 +1003,23 @@ article.newsletter > div > div button {
         align-items: flex-start;
     }
     .best-champ > p, .best-role > p {
-        width: 80%;
+        font-size: 11px;
+        width: auto;
     }
-    .best-role {
-        align-items: flex-end;
+    .best-champ > div p, .best-role > div p {
+        font-size: 10px;
     }
     article.best section.best-champ > div, article.best section.best-role > div {
         gap: 8px;
+    }
+    article.best section.best-champ img, article.best section.best-role img {
+        width: var(--heigth);
+        height: var(--heigth);
     }
 
     article.newsletter {
         border-radius: 0;
     }
-
     .social > img {
         width: 50px;
         height: 30px;
@@ -1020,17 +1037,9 @@ article.newsletter > div > div button {
 }
 
 @media screen and (max-width: 375px) {
-    .arrow {
-        grid-area: 3/4/4/5;
-    }
 }
 
 @media screen and (max-width: 320px) {
-    .best-champ > p, .best-role > p {
-        font-size: 16px;
-    }
 
-    .best-champ > div p, .best-role > div p {
-        font-size: 12px;
-    }
+    
 }
