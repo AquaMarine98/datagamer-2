@@ -1000,7 +1000,7 @@ article.newsletter > div > div button {
     .best-champ, .best-role {
         width: 45%;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
     }
     .best-champ > p, .best-role > p {
         font-size: 11px;
@@ -1021,10 +1021,12 @@ article.newsletter > div > div button {
         border-radius: 0;
     }
     .social > img {
-        width: 50px;
-        height: 30px;
-
+        width: var(--heigth);
+        height: var(--heigth);
         object-fit: contain;
+    }
+    .social {
+        gap: 0 5vw;
     }
 
     section.top h1.title {
