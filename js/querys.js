@@ -1,8 +1,22 @@
-// Use data and match information
+// User
+const userImg = document.querySelector('img.account-img');
+const name = document.querySelector('h1.name');
+const divisionWinrate = document.querySelector('p.division-winrate');
+
+// Match
+const userChamp = document.querySelector('champ-img');
+const userSpells = document.querySelectorAll('img.spell-img');
+const [result, division] = document.querySelectorAll('div.info h1');
+const [kda, csAndLevel] = document.querySelectorAll('div.kda h1');
+const date = document.querySelector('div.kda p');
+const items = document.querySelectorAll('img.items img');
+const champs = document.querySelectorAll('div.champs img');
+
+// User data and match information
 const informationContainer = document.querySelector('article.information-container');
 const prediction = document.querySelector('article.prediction');
 
-// Button for seach summoner
+// Button for search summoner
 const searchButton = document.querySelector('button.search-button');
 
 // Buttons for change region
